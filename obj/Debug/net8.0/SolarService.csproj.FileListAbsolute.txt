@@ -137,3 +137,9 @@
 /Users/anuragshukla/Documents/DotNetProject/WebService/SolarService/obj/Debug/net8.0/SolarService.pdb
 /Users/anuragshukla/Documents/DotNetProject/WebService/SolarService/obj/Debug/net8.0/SolarService.genruntimeconfig.cache
 /Users/anuragshukla/Documents/DotNetProject/WebService/SolarService/obj/Debug/net8.0/ref/SolarService.dll
+/Users/anuragshukla/Documents/DotNetProject/WebService/SolarService/bin/Debug/net8.0/publish/web.config
+/Users/anuragshukla/Documents/DotNetProject/WebService/SolarService/bin/Debug/net8.0/publish/appsettings.Development.json
+/Users/anuragshukla/Documents/DotNetProject/WebService/SolarService/bin/Debug/net8.0/publish/appsettings.json
+/Users/anuragshukla/Documents/DotNetProject/WebService/SolarService/bin/Debug/net8.0/publish/SolarService.deps.json
+/Users/anuragshukla/Documents/DotNetProject/WebService/SolarService/bin/Debug/net8.0/publish/SolarService.runtimeconfig.json
+/Users/anuragshukla/Documents/DotNetProject/WebService/SolarService/obj/Debug/net8.0/SolarService.sourcelink.json

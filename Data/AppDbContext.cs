@@ -27,6 +27,7 @@ namespace SolarService.Data
         public DbSet<Installation> Installations => Set<Installation>();
         public DbSet<Invoice> Invoices => Set<Invoice>();
         public DbSet<Tenant> Tenant => Set<Tenant>();
+        public DbSet<Customer> Customers => Set<Customer>();
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -99,6 +100,16 @@ namespace SolarService.Data
                 .WithMany()
                 .HasForeignKey(inv => inv.TenantId)
                 .OnDelete(DeleteBehavior.NoAction);
+
+            builder.Entity<Customer>()
+                .HasOne(c => c.Tenant)
+                .WithMany()
+                .HasForeignKey(c => c.TenantId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            builder.Entity<Customer>()
+                .HasIndex(c => c.CustomerId)
+                .IsUnique();
 
 
             //------------------------------------------

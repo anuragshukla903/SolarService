@@ -13,9 +13,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Controllers
 builder.Services.AddControllers();
 
-// Register tenant provider ONLY
+// Register tenant provider and managers
 builder.Services.AddScoped<ITenantProvider, TenantProvider>();
 builder.Services.AddScoped<LeadManager>();
+builder.Services.AddScoped<CustomerManager>();
+
+// Add HTTP context accessor
+builder.Services.AddHttpContextAccessor();
 
 // DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
