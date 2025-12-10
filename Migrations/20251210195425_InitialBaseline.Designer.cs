@@ -12,8 +12,8 @@ using SolarService.Data;
 namespace SolarService.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251208193819_AddCustomerEntity")]
-    partial class AddCustomerEntity
+    [Migration("20251210195425_InitialBaseline")]
+    partial class InitialBaseline
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -102,16 +102,49 @@ namespace SolarService.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AlternateMobile")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Mobile")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pincode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("State")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TenantId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("CustomerId")
+                        .IsUnique();
 
                     b.HasIndex("TenantId");
 
@@ -432,7 +465,7 @@ namespace SolarService.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 12, 8, 19, 38, 18, 862, DateTimeKind.Utc).AddTicks(3540),
+                            CreatedAt = new DateTime(2025, 12, 10, 19, 54, 25, 248, DateTimeKind.Utc).AddTicks(7490),
                             IsActive = true,
                             Name = "Default Tenant",
                             Slug = "default"
@@ -493,13 +526,13 @@ namespace SolarService.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 12, 8, 19, 38, 19, 59, DateTimeKind.Utc).AddTicks(7060),
+                            CreatedAt = new DateTime(2025, 12, 10, 19, 54, 25, 355, DateTimeKind.Utc).AddTicks(1360),
                             Email = "admin@example.com",
                             FullName = "Super Admin",
                             IsActive = true,
                             IsDelete = false,
                             Mobile = "9999999999",
-                            Password = "$2a$11$CN6UEB9Ch5pHh1PhL973Oe10kJHSjklefl2pXIC7sg8UOKNKt4eG2",
+                            Password = "$2a$11$z8xW6stRN6Jej/w3kK3sHeZIqSNHASntHUjRI9NzKm6BIDOWuZj.u",
                             RoleId = 1,
                             TenantId = 1
                         });
@@ -527,7 +560,7 @@ namespace SolarService.Migrations
                     b.HasOne("SolarService.Models.Tenant", "Tenant")
                         .WithMany()
                         .HasForeignKey("TenantId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Tenant");

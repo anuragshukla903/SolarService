@@ -462,7 +462,7 @@ namespace SolarService.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 12, 9, 18, 36, 37, 124, DateTimeKind.Utc).AddTicks(4760),
+                            CreatedAt = new DateTime(2025, 12, 10, 19, 54, 25, 248, DateTimeKind.Utc).AddTicks(7490),
                             IsActive = true,
                             Name = "Default Tenant",
                             Slug = "default"
@@ -523,13 +523,13 @@ namespace SolarService.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 12, 9, 18, 36, 37, 318, DateTimeKind.Utc).AddTicks(6780),
+                            CreatedAt = new DateTime(2025, 12, 10, 19, 54, 25, 355, DateTimeKind.Utc).AddTicks(1360),
                             Email = "admin@example.com",
                             FullName = "Super Admin",
                             IsActive = true,
                             IsDelete = false,
                             Mobile = "9999999999",
-                            Password = "$2a$11$eg18jX2N16AYDTQl.hcDXu/T8gsH1z1RCAdAhKeNB5c/9YXslAI4K",
+                            Password = "$2a$11$z8xW6stRN6Jej/w3kK3sHeZIqSNHASntHUjRI9NzKm6BIDOWuZj.u",
                             RoleId = 1,
                             TenantId = 1
                         });
