@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SolarService.Interface;
 using SolarService.Models;
+using SolarService.Models.Master;
 
 namespace SolarService.Data
 {
@@ -28,6 +29,12 @@ namespace SolarService.Data
         public DbSet<Invoice> Invoices => Set<Invoice>();
         public DbSet<Tenant> Tenant => Set<Tenant>();
         public DbSet<Customer> Customers => Set<Customer>();
+        
+        //Master table
+        public DbSet<PanelMaster> PanelMasters { get; set; }
+        public DbSet<InverterMaster> InverterMasters { get; set; }
+        public DbSet<StructureMaster> StructureMasters { get; set; }
+        public DbSet<RateMaster> RateMasters { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -111,10 +118,6 @@ namespace SolarService.Data
                 .HasIndex(c => c.CustomerId)
                 .IsUnique();
 
-
-            //------------------------------------------
-            // 3️⃣ UNIQUE EMAIL
-            //------------------------------------------
             builder.Entity<User>()
                 .HasIndex(u => u.Email)
                 .IsUnique();
